@@ -7,7 +7,7 @@
 <!-- Marque com um `x` todas as opções que se aplicam ao seu PR: -->
 
 - [ ] _Breaking change_ (correção ou nova funcionalidade que impacta recursos existentes)
-- [ ] Nova funcionalidade (_non-breaking change_, adicionando novos recursos - monitor)
+- [ ] Nova funcionalidade (_non-breaking change_, adicionando novos recursos - mentor)
 - [ ] Correção (_non-breaking change_, corrigindo um recurso)
 - [ ] Documentação
 
