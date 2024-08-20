@@ -25,7 +25,7 @@ Leia nosso documento completo sobre como apoiar a comunidade [clicando aqui.](h
 - [WIP]
 
 ## Documentos relacionados
----
+
 -  
 
 ## Contato
