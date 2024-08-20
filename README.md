@@ -10,6 +10,7 @@ Além disso, surgiu a dificuldade de extrair métricas que pudessem realmente re
 
 O objetivo principal deste repositório é criar um ponto central de referência para todo o ecossistema de mentorias da nossa organização. Queremos centralizar e compilar todos os eventos e interações relacionadas ao programa de mentoria, tornando esses dados acessíveis e prontos para consumo, tanto para análise interna quanto para orientar futuras melhorias. Seguem alguns objetivos tangíveis e premissas dessa inciativa:
 - [ ] Permitir o cadastro/acesso de dados de mentor e mentorado, assim como ser possível rastear estado situacional de cada um deles
+- [ ] Integrar com o fluxo de agendamento que é feito via site e google agendas hoje, buscar uma forma de engatilhar uma inserção numa planilha após a confirmação do agendamento.  
 - [ ] Prover um ponto de entrada para gerar relatórios sobre o andamento de mentorias, como por exemplo: volumetria, mentorias canceladas, recorrência e etc
 - [ ] Ter uma solução que facilite a notificação dos participantes em um canal de fácil acesso (além do email): discord, sms, whatsapp, telegram ou similar
 
