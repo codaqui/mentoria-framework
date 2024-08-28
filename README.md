@@ -1,4 +1,4 @@
-# 👨‍🏫 Framework de Mentorias | Codaqui
+# 👨‍🏫 Framework de Mentorias
 
 <p align="center">
   <img src="docs/assets/header.png" alt="header-img">
