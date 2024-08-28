@@ -1,34 +1,20 @@
-# 👨‍🏫 Framework de Mentorias
+<h1 align="center">
+	👨‍🏫 Framework de Mentorias | Codaqui
+</h1>
 
 <p align="center">
-  <img src="docs/assets/header.png" alt="header-img">
+    <img src="docs/assets/header.png" alt="header-img">
 </p>
 
 <p align="center">
-  <a href="#-sobre">
-    <img src="https://img.shields.io/badge/%20Sobre-Informational?style=flat-square&logo=info&logoColor=white" alt="Sobre">
-  </a>&nbsp;&nbsp;&nbsp;
-
-  <a href="#-objetivo">
-    <img src="https://img.shields.io/badge/%20Objetivo-Important?style=flat-square&logo=target&logoColor=white" alt="Objetivo">
-  </a>&nbsp;&nbsp;&nbsp;
-
-  <a href="#-contribuições">
-    <img src="https://img.shields.io/badge/%20Contribuições-%2328A745?style=flat-square&logo=github&logoColor=white" alt="Contribuições">
-  </a>&nbsp;&nbsp;&nbsp;
-
-  <a href="#-dependências">
-    <img src="https://img.shields.io/badge/%20Dependências-Important?style=flat-square&logo=box&logoColor=white" alt="Dependências">
-  </a>&nbsp;&nbsp;&nbsp;
-
-  <a href="#-documentações">
-    <img src="https://img.shields.io/badge/%20Documentações-Important?style=flat-square&logo=book&logoColor=white" alt="Documentações">
-  </a>&nbsp;&nbsp;&nbsp;
-
-  <a href="#-contato">
-    <img src="https://img.shields.io/badge/%20Contato-Blue?style=flat-square&logo=mail&logoColor=white" alt="Contato">
-  </a>
+<a href="#sobre">📝 Sobre</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+<a href="#objetivo">🎯 Objetivo</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+<a href="#contribuições">🤝 Contribuições</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+<a href="#dependências">📦 Dependências</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+<a href="#documentações">📚 Documentações</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+<a href="#contato">📬 Contato</a>
 </p>
+
 
 ## 📝 Sobre
 
