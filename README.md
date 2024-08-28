@@ -25,16 +25,13 @@ Além disso, surgiu a dificuldade de extrair métricas que pudessem realmente re
 
 ## 🎯 Objetivo
 
-O objetivo principal deste repositório é criar um ponto central de referência para todo o ecossistema de mentorias da
-nossa organização. Queremos centralizar e compilar todos os eventos e interações relacionadas ao programa de mentoria,
-tornando esses dados acessíveis e prontos para consumo, tanto para análise interna quanto para orientar futuras melhorias.
-Seguem alguns objetivos tangíveis e premissas dessa inciativa:
+> [👉 Acesse aqui Roadmap mais recente do projeto](/docs/roadmap.md)
 
-- [ ] Integrar com o fluxo de agendamento no qual é feito via site e google agendas hoje, buscar uma forma de engatilhar uma inserção numa planilha após a confirmação do agendamento
-- [ ] Permitir o cadastro/acesso de dados de mentor e mentorado, assim como ser possível rastear estado situacional de cada um deles
-- [ ] Prover um ponto de entrada para gerar relatórios sobre o andamento de mentorias, como por exemplo: volumetria, mentorias canceladas, recorrência e etc
-- [ ] Ter uma solução que facilite a notificação dos participantes num canal de fácil acesso (além do email): discord, sms, whatsapp, telegram ou similar
-- [ ] Permitir o consumo dos dados para fins de auditoria e estudo
+O objetivo deste repositório é centralizar e compilar dados sobre o programa de mentoria da nossa organização,
+facilitando o acesso e análise dessas informações para melhorias contínuas. Entre os objetivos principais estão
+integrar com o fluxo de agendamento existente, possibilitar o cadastro e rastreamento de mentores e mentorados,
+gerar relatórios sobre o progresso das mentorias, e fornecer uma solução para notificações via diversos canais
+(como Discord, SMS, WhatsApp, ou Telegram). Além disso, a solução permitirá o uso dos dados para auditoria e estudo.
 
 ## 🤝 Contribuições
 
@@ -50,8 +47,8 @@ Leia nosso documento completo sobre como apoiar a comunidade [clicando aqui.](ht
 
 ## 📚 Documentações
 
-- [Workflow de agendamento](docs/devdocs/workflows.md)
-- [Roadmap de projeto](docs/roadmap.md)
+- [Workflows](docs/devdocs/workflows.md)
+- [Roadmap](docs/roadmap.md)
 
 ## 📬 Contato
 <table>
