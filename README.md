@@ -7,12 +7,12 @@
 </p>
 
 <p align="center">
-<a href="#sobre">📝 Sobre</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-<a href="#objetivo">🎯 Objetivo</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-<a href="#contribuições">🤝 Contribuições</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-<a href="#dependências">📦 Dependências</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-<a href="#documentações">📚 Documentações</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-<a href="#contato">📬 Contato</a>
+<a href="#-sobre">📝 Sobre</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+<a href="#-objetivo">🎯 Objetivo</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+<a href="#-contribuições">🤝 Contribuições</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+<a href="#-dependências">📦 Dependências</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+<a href="#-documentações">📚 Documentações</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+<a href="#-contato">📬 Contato</a>
 </p>
 
 
@@ -25,7 +25,7 @@ Além disso, surgiu a dificuldade de extrair métricas que pudessem realmente re
 
 ## 🎯 Objetivo
 
-> [👉 Acesse aqui Roadmap mais recente do projeto](/docs/roadmap.md)
+> [👉 Roadmap atual do Projeto](/docs/roadmap.md)
 
 O objetivo deste repositório é centralizar e compilar dados sobre o programa de mentoria da nossa organização,
 facilitando o acesso e análise dessas informações para melhorias contínuas. Entre os objetivos principais estão
