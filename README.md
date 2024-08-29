@@ -47,7 +47,7 @@ Leia nosso documento completo sobre como apoiar a comunidade [clicando aqui.](ht
 
 ## 📚 Documentações
 
-- [Workflows](docs/devdocs/workflows.md)
+- [Workflow de Agendamento](docs/devdocs/workflow-agendamento.md)
 - [Roadmap](docs/roadmap.md)
 
 ## 📬 Contato
