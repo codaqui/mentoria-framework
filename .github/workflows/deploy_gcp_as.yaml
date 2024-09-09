@@ -1,0 +1,40 @@
+name: Deploy to Google Apps Script
+
+on:
+  push:
+    branches:
+      - main #main-gcp-production
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+
+      - name: Install Clasp
+        run: npm install -g @google/clasp
+
+      - name: Clasp Authenticate
+        run: clasp login --creds ./.github/credentials.json
+        env:
+          GOOGLE_APPLICATION_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}
+
+      - name: Clone Google Apps Script project
+        run: clasp clone ${{ vars.APPS_SCRIPT_ID }}
+
+      - name: Setup .claspignore
+        run: |
+          echo "*" > .claspignore
+          echo "!src/apps_script/" >> .claspignore
+          echo "src/apps_script/*" >> .claspignore
+          echo "!src/apps_script/schedule.js" >> .claspignore
+
+      - name: Stream schedule.js to Apps Script
+        run: clasp push --force
