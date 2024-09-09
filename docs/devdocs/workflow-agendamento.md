@@ -14,7 +14,6 @@
 Este documento descreve o fluxo de agendamento que integra o Google Agenda com uma planilha do Google Sheets via Apps Script. O objetivo é automatizar o processo de registro de eventos de mentoria, garantindo que todos os agendamentos sejam salvos e atualizados de forma eficiente.
 
 ## 🔧 Requisitos
-//todo: adicionar os respectivos links
 Antes de começar, certifique-se de que você tem acesso aos seguintes itens:
 - ✅ **Conta Google** com permissão para acessar o Google Agenda e a planilha no namespace da codaqui.
 - ✅ **Google Apps Script** configurado com permissões adequadas (leitura e escrita).
@@ -29,16 +28,14 @@ O projeto é dividido em dois componentes principais:
 
 ### 1️⃣ Criação do Evento
 Quando um evento é agendado na Google Agenda:
-- Um **Google Apps Script** é acionado automaticamente através do trigger//todo: link aq
-- O script extrai informações relevantes do evento, como (wip)//todo: voltar aqui pra bater o schema
+- Um **Google Apps Script** é acionado automaticamente através do trigger
+- O script extrai informações relevantes do evento, como (wip)
 - As informações são formatadas para serem compatíveis com a planilha.
 
 ### 2️⃣ Atualização da Planilha
 Depois que os dados são extraídos:
 - O script acessa a **Google Sheets** e insere uma nova linha com as informações do evento.
 - Se o evento for atualizado ou cancelado, a linha correspondente na planilha também é atualizada.
-
-//Sessão 3 - Fluxo de comunicação / Looker?
 
 ## 🛠️ Manutenção
 Para garantir que o fluxo funcione corretamente:
