@@ -25,10 +25,8 @@ jobs:
         run: echo "${{ secrets.GCP_CREDENTIALS }}"
 
       - name: Authenticate clasp
-        env:
-          GCP_CREDENTIALS: ${{ secrets.GCP_CREDENTIALS }}
         run: |
-          echo $GCP_CREDENTIALS > credentials.json
+          echo "${{ secrets.GCP_CREDENTIALS }}" | base64 --decode > credentials.json
           clasp login --creds credentials.json
 
       - name: Debug .clasp.json
