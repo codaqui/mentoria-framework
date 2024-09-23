@@ -25,9 +25,11 @@ jobs:
         env:
           GCP_CREDENTIALS: ${{ secrets.GCP_CREDENTIALS }}
         run: |
-          echo "Salvando credenciais em credentials.json..."
           echo $GCP_CREDENTIALS > credentials.json
           clasp login --creds credentials.json
+
+      - name: Debug .clasp.json
+        run: cat .clasp.json
 
       - name: Clone Google Apps Script project
         run: clasp clone ${{ secrets.APPS_SCRIPT_ID }}
