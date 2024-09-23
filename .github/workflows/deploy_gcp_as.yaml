@@ -23,9 +23,9 @@ jobs:
 
       - name: Clasp Authenticate
         env:
-          GOOGLE_CREDENTIALS: ${{ secrets.GCP_CREDENTIALS }}
+          GCP_CREDENTIALS: ${{ secrets.GCP_CREDENTIALS }}
         run: |
-          echo $GOOGLE_CREDENTIALS > credentials.json
+          echo GCP_CREDENTIALS > credentials.json
           clasp login --creds credentials.json
 
       - name: Clone Google Apps Script project
