@@ -3,7 +3,7 @@ name: Deploy to Google Apps Script
 on:
   push:
     branches:
-      - main #main-gcp-production
+      - main
 
 jobs:
   deploy:
