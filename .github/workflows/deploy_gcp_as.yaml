@@ -22,9 +22,11 @@ jobs:
         run: npm install -g @google/clasp
 
       - name: Clasp Authenticate
-        run: clasp login --creds ./.github/credentials.json
         env:
-          GOOGLE_APPLICATION_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}
+          GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}
+        run: |
+          echo $GOOGLE_CREDENTIALS > credentials.json
+          clasp login --creds credentials.json
 
       - name: Clone Google Apps Script project
         run: clasp clone ${{ vars.APPS_SCRIPT_ID }}
