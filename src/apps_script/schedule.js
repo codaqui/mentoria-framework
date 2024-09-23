@@ -2,38 +2,36 @@ function onEventCreated(trigger) {
   if (!trigger) {
     return;
   }
-    
+
   var calendarId = trigger.calendarId;
   var calendar = CalendarApp.getCalendarById(calendarId);
-  // Logger.log("Event Raised: " + calendarId);
   var properties = PropertiesService.getUserProperties();
-  var options = {};
-  var syncToken = properties.getProperty('syncToken'); // pointer token from last sync also stored in user properties
-  if (syncToken) { // if there is a sync token from last time
-    options.syncToken = syncToken; // adds the current sync token to the list of sync options
+  var predicateFilter = {};
+  var currentSyncToken = properties.getProperty('syncToken');
+  if (currentSyncToken) {
+    predicateFilter.syncToken = currentSyncToken;
   } else {
-    // Sync events from today onwards.
-    options.timeMin = new Date().toISOString(); //change to new Date().toISOString() from getRelativeDate(-1, 0).toISOString()    
-  }    
+    predicateFilter.timeMin = new Date().toISOString();
+  }
+
   var eventResponse;
   var pageToken = null;
   try{
-    do{      
-      var eventResponse = Calendar.Events.list(calendarId, options);
+    do{
+      var eventResponse = Calendar.Events.list(calendarId, predicateFilter);
       pageToken = eventResponse.nextPageToken;
-      // Logger.log ('PageToken: %s', pageToken);
 
       if(eventResponse.nextSyncToken != null){
-        options.syncToken = eventResponse.nextSyncToken;
+        predicateFilter.syncToken = eventResponse.nextSyncToken;
         properties.setProperty('syncToken', eventResponse.nextSyncToken)
-        // Logger.log ('NextSyncToken: %s', eventResponse.nextSyncToken);
       }
+
       var events = eventResponse.items;
       for (var j=0; j<events.length; j++) {
-        var e = calendar.getEventById(events[j].id);        
+        var e = calendar.getEventById(events[j].id);
         addEventToSheet(e);
       }
-      options.nextPageToken = pageToken;
+      predicateFilter.nextPageToken = pageToken;
 
     }while(pageToken != null);
   } catch (ex){
@@ -50,7 +48,7 @@ function addEventToSheet(event) {
       return guest.getEmail();
   }).join(', ');
 
-  var values = [
+  var scheduledEventData = [
     event.getId(), 
     new Date(), 
     guestEmails, 
@@ -62,11 +60,10 @@ function addEventToSheet(event) {
   var idFinder = sheet.createTextFinder(event.getId());
   var idFinderResult = idFinder.findAll();
   if (idFinderResult.length == 0) {
-    sheet.appendRow(values);
+    sheet.appendRow(scheduledEventData);
   } else {
     var range = idFinderResult[0];
-    range.offset(0, 0, 1, values.length).setValues([values]);
+    range.offset(0, 0, 1, scheduledEventData.length).setValues([scheduledEventData]);
   }
-
 }
 
