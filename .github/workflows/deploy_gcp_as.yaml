@@ -21,6 +21,9 @@ jobs:
       - name: Install Clasp
         run: npm install -g @google/clasp
 
+      - name: Debug Credentials
+        run: echo "${{ secrets.GCP_CREDENTIALS }}"
+
       - name: Authenticate clasp
         env:
           GCP_CREDENTIALS: ${{ secrets.GCP_CREDENTIALS }}
