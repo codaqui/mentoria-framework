@@ -5,38 +5,31 @@ function onEventCreated(trigger) {
     
   var calendarId = trigger.calendarId;
   var calendar = CalendarApp.getCalendarById(calendarId);
-  // Logger.log("Event Raised: " + calendarId);
   var properties = PropertiesService.getUserProperties();
-  var options = {};
-  var syncToken = properties.getProperty('syncToken'); // pointer token from last sync also stored in user properties
-  if (syncToken) {                        // if there is a sync token from last time
-    options.syncToken = syncToken; // adds the current sync token to the list of sync options
+  var predicateFilter = {};
+  var currentSyncToken = properties.getProperty('syncToken');
+  if (currentSyncToken) {
+    predicateFilter.syncToken = currentSyncToken;
   } else {
-    // Sync events from today onwards.
-    options.timeMin = new Date().toISOString(); //change to new Date().toISOString() from getRelativeDate(-1, 0).toISOString()    
+    predicateFilter.timeMin = new Date().toISOString();
   }    
   var eventResponse;
   var pageToken = null;
   try{
     do{     
-      Logger.log(options);
-      var eventResponse = Calendar.Events.list(calendarId, options);
+      var eventResponse = Calendar.Events.list(calendarId, predicateFilter);
       pageToken = eventResponse.nextPageToken;
-      Logger.log ('PageToken: %s', pageToken);
 
       if(eventResponse.nextSyncToken != null){
-        options.syncToken = eventResponse.nextSyncToken;
+        predicateFilter.syncToken = eventResponse.nextSyncToken;
         properties.setProperty('syncToken', eventResponse.nextSyncToken)
-        Logger.log ('NextSyncToken: %s', eventResponse.nextSyncToken);
       }
       var events = eventResponse.items;
-      // Logger.log ('events: %s', events.length);
       for (var j=0; j<events.length; j++) {
         var e = calendar.getEventById(events[j].id);      
-        Logger.log ('Title: %s', e.getTitle());  
         upsertEventToSheet(e);
       }
-      options.nextPageToken = pageToken;
+      predicateFilter.nextPageToken = pageToken;
 
     } while(pageToken != null);
   } catch (ex){
