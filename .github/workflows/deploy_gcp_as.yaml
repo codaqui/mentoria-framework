@@ -24,8 +24,7 @@ jobs:
       - name: Create creds.json file
         env:
           GCP_CREDENTIALS: ${{ secrets.GCP_CREDENTIALS }}
-        run: |
-          echo "$GCP_CREDENTIALS" > creds.json
+        run: echo "$GCP_CREDENTIALS" >> creds.json
 
       - name: Clasp login
         run: clasp login --creds creds.json
