@@ -2,7 +2,7 @@ function onEventCreated(trigger) {
   if (!trigger) {
     return;
   }
-    
+
   var calendarId = trigger.calendarId;
   var calendar = CalendarApp.getCalendarById(calendarId);
   var properties = PropertiesService.getUserProperties();
@@ -12,11 +12,11 @@ function onEventCreated(trigger) {
     predicateFilter.syncToken = currentSyncToken;
   } else {
     predicateFilter.timeMin = new Date().toISOString();
-  }    
+  }
   var eventResponse;
   var pageToken = null;
   try{
-    do{     
+    do{
       var eventResponse = Calendar.Events.list(calendarId, predicateFilter);
       pageToken = eventResponse.nextPageToken;
 
@@ -26,7 +26,7 @@ function onEventCreated(trigger) {
       }
       var events = eventResponse.items;
       for (var j=0; j<events.length; j++) {
-        var e = calendar.getEventById(events[j].id);      
+        var e = calendar.getEventById(events[j].id);
         upsertEventToSheet(e);
       }
       predicateFilter.nextPageToken = pageToken;
@@ -55,7 +55,7 @@ function upsertEventToSheet(event) {
 
   var mentorsSheetName = 'Mentors';
   var mentorsSheet = spreadsheet.getSheetByName(mentorsSheetName);
-  
+
   var mentor = {};
   var mentees = [];
 
@@ -64,7 +64,7 @@ function upsertEventToSheet(event) {
     if (mentorFinder.findAll().length !== 0) {
       Logger.log ('mentor: %s', guest.getEmail());
       mentor = {email: guest.getEmail()};
-    } else {  
+    } else {
       Logger.log ('mentee: %s', guest.getEmail());
       mentee = {name: guest.getName(), email: guest.getEmail(), phone: telefone, age: idade, city: cidade};
       mentees.push(mentee);
@@ -83,10 +83,10 @@ function upsertMentee(spreadsheet, mentee, mentor) {
   var menteesSheet = spreadsheet.getSheetByName(menteesSheetName);
 
   var menteeValue = [
-    mentee.email, 
-    mentee.name, 
-    mentor.email, 
-    mentee.phone, 
+    mentee.email,
+    mentee.name,
+    mentor.email,
+    mentee.phone,
     mentee.age,
     mentee.city
   ];
@@ -106,12 +106,12 @@ function upsertSchedule(spreadsheet, event, mentee, mentor) {
   var schedulesSheet = spreadsheet.getSheetByName(scheduleSheetName);
 
   var scheduleValue = [
-    event.getId(), 
-    new Date(), 
-    mentor.email, 
-    mentee.email, 
-    event.getStartTime(), 
-    event.getEndTime(), 
+    event.getId(),
+    new Date(),
+    mentor.email,
+    mentee.email,
+    event.getStartTime(),
+    event.getEndTime(),
     event.getTitle()
   ];
 
