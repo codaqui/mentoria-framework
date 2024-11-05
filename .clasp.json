@@ -1,5 +1,6 @@
 {
   "scriptId":"",
   "rootDir":"src",
-  "fileExtension": "js"
+  "fileExtension": "js",
+  "filePushOrder": ["src/schedule.js"]
 }
