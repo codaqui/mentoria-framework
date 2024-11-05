@@ -66,3 +66,31 @@ jobs:
         run: clasp deploy -i "$DEPLOYMENT_ID" -d "$GITHUB_REF"
         env:
           DEPLOYMENT_ID: ${{ secrets.DEPLOYMENT_ID }}
+
+      # Release / Version / Tag
+      - name: Use GitVersion
+        id: git-version
+        uses: gittools/actions/gitversion/setup@v0.9
+        with:
+          versionSpec: '5.x'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Create Git Tag
+        if: github.ref == 'refs/heads/main'
+        run: |
+          git config --local user.name "github-actions"
+          git config --local user.email "github-actions@github.com"
+          git tag -a "${{ steps.gitversion.outputs.fullSemVer }}" -m "Version ${{ steps.gitversion.outputs.fullSemVer }}"
+          git push origin "${{ steps.gitversion.outputs.fullSemVer }}"
+
+      - name: Create GitHub Release
+        if: github.ref == 'refs/heads/main'
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: "${{ steps.gitversion.outputs.fullSemVer }}"
+          release_name: "Release ${{ steps.gitversion.outputs.fullSemVer }}"
+          draft: false
+          prerelease: false
