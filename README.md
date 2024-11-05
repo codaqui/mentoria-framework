@@ -3,7 +3,9 @@
 </h1>
 
 <p align="center">
-    <img src="docs/assets/header.png" alt="header-img">
+    <a href="https://github.com/codaqui/mentoria-framework/actions/workflows/deploy_gcp_as.yaml">
+        <img src="https://github.com/codaqui/mentoria-framework/actions/workflows/deploy_gcp_as.yaml/badge.svg?branch=main">
+    </a>
 </p>
 
 <p align="center">
