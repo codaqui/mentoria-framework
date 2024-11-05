@@ -3,7 +3,7 @@ name: Deploy to Google Apps Script
 on:
   workflow_dispatch:
   push:
-    branches: [main, '**']
+    branches: ['main', 'feature/*', 'refactor/*', '*fix/*']
   release:
     types: [published]
 
