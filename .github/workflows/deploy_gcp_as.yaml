@@ -27,8 +27,7 @@ jobs:
         run: echo "$GCP_CREDENTIALS" > $HOME/.clasprc.json
 
       - name: Clone Google Apps Script project
-        working-directory: $HOME
-        run: clasp clone ${{ secrets.APPS_SCRIPT_ID }}
+        run: clasp clone ${{ secrets.APPS_SCRIPT_ID }} --rootDir "${{ runner.temp }}/appscript_project"
 
       - name: Setup .claspignore
         run: |
@@ -38,5 +37,5 @@ jobs:
           echo "!src/apps_script/schedule.js" >> .claspignore
 
       - name: Stream schedule.js to Apps Script
-        working-directory: $HOME
+        working-directory: "${{ runner.temp }}/appscript_project"
         run: clasp push --force
